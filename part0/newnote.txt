@@ -1,0 +1,26 @@
+note over Browser:
+POST request contains Form Data
+end note
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note right of Server: 
+the server accepts the request 
+and processes the form data to 
+add the note to the list of notes
+end note
+Server->Browser: Redirect to exampleapp/notes
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server->Browser: exampleapp/notes
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server->Browser: main.js
+note over Browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server->Browser: data.json
+note over Browser:
+browser executes the event handler
+that renders notes to display
+end note
